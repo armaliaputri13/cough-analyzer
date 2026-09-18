@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Hasil Analisis — Pengembangan Reka TB
+    </title>
+
+    <meta
+        name="description"
+        content="Hasil analisis audio Pengembangan Reka TB untuk tujuan edukasi."
+    >
+
+    <link
+        rel="stylesheet"
+        href="hasil.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="result-header">
+
+        <div class="result-header-inner">
+
+            <a
+                href="index.html"
+                class="result-logo"
+            >
+
+                <span class="result-logo-mark"></span>
+
+                <span class="result-logo-text">
+                    Cough<span>Analyzer</span>
+                </span>
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="back-button"
+            >
+
+                ← Kembali
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="result-main">
+
+        <div class="result-container">
+
+
+            <!-- =========================
+                 TITLE
+            ========================== -->
+
+            <div class="result-title">
+
+                <span class="result-label">
+                    ANALISIS SELESAI
+                </span>
+
+
+                <h1>
+
+                    Hasil
+                    <span>Analisis.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Rekaman suara berhasil diproses.
+                    Berikut adalah hasil analisis karakteristik
+                    audio dari rekaman yang kamu lakukan.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RESULT CARD
+            ========================== -->
+
+            <section class="result-card">
+
+
+                <!-- RESULT VISUAL -->
+
+                <div class="result-visual">
+
+                    <div
+                        class="result-ring result-ring-one"
+                    ></div>
+
+                    <div
+                        class="result-ring result-ring-two"
+                    ></div>
+
+                    <div
+                        class="result-ring result-ring-three"
+                    ></div>
+
+
+                    <div class="result-score">
+
+                        <strong id="resultScore">
+                            --%
+                        </strong>
+
+                        <span>
+                            AUDIO MATCH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESULT STATUS -->
+
+                <div class="result-status">
+
+                    <span class="result-status-dot"></span>
+
+                    Analisis audio berhasil
+
+                </div>
+
+
+
+                <!-- RESULT SCORE -->
+
+                <div class="result-score-label">
+
+                    <span>
+                        SEBERAPA DEKAT SUARA AUDIOMU DENGAN POLA TBC?
+                    </span>
+
+                    <strong id="resultScoreText">
+                        --%
+                    </strong>
+
+                </div>
+
+
+
+                <!-- RESULT DESCRIPTION -->
+
+                <p
+                    class="result-description"
+                    id="resultDescription"
+                    style="display: none;"
+                >
+
+                    Sistem sedang membaca hasil
+                    rekamanmu...
+
+                </p>
+
+
+
+                <!-- =========================
+                     AUDIO DATA
+                ========================== -->
+
+                <div class="audio-data">
+
+
+                    <div class="audio-data-card">
+
+                        <small>
+                            Durasi
+                        </small>
+
+                        <strong id="resultDuration">
+                            --
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="audio-data-card">
+
+                        <small>
+                            Format
+                        </small>
+
+                        <strong>
+                            Audio
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="audio-data-card">
+
+                        <small>
+                            Input
+                        </small>
+
+                        <strong>
+                            Mic
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="audio-data-card">
+
+                        <small>
+                            Status
+                        </small>
+
+                        <strong>
+                            Ready
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     WAVEFORM
+                ========================== -->
+
+                <div class="result-waveform">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 INFO
+            ========================== -->
+
+            <section class="result-info">
+
+
+                <!-- CARA MEMBACA -->
+
+                <article class="info-card">
+
+                    <div class="info-card-top">
+
+                        <div class="info-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Cara Membaca Hasil
+                        </h3>
+
+                    </div>
+
+
+                    <div class="score-guide">
+
+                        <div class="score-guide-item">
+
+                            <strong>
+                                0–39%
+                            </strong>
+
+                            <span>
+                                Masih cukup jauh
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-guide-item">
+
+                            <strong>
+                                40–59%
+                            </strong>
+
+                            <span>
+                                Mulai mendekati
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-guide-item">
+
+                            <strong>
+                                60–79%
+                            </strong>
+
+                            <span>
+                                Cukup mendekati
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-guide-item">
+
+                            <strong>
+                                80–100%
+                            </strong>
+
+                            <span>
+                                Semakin mendekati
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TENTANG HASIL -->
+
+                <article class="info-card">
+
+                    <div class="info-card-top">
+
+                        <div class="info-icon">
+                            ≋
+                        </div>
+
+                        <h3>
+                            Tentang Hasil
+                        </h3>
+
+                    </div>
+
+
+                    <div class="education-content">
+
+                        <span
+                            class="education-category"
+                            id="educationCategory"
+                        >
+                            Masih cukup jauh
+                        </span>
+
+                        <h4 id="educationTitle">
+                            🫁 Kenali TBC
+                        </h4>
+
+                        <p id="educationDescription">
+                            TBC adalah penyakit infeksi yang paling sering
+                            menyerang paru-paru. Penyebabnya adalah bakteri
+                            <em>Mycobacterium tuberculosis</em>.
+                        </p>
+
+                        <div class="education-action">
+
+                            <strong>
+                                Yang perlu dilakukan:
+                            </strong>
+
+                            <span id="educationAction">
+                                tetap jaga kesehatan dan kenali gejalanya.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =========================
+                 DISCLAIMER
+            ========================== -->
+
+            <div class="result-disclaimer">
+
+                <strong>
+                    ⚠ Catatan Penting
+                </strong>
+
+
+                Cough Analyzer merupakan proyek pembelajaran
+                yang dibuat untuk mengenalkan bagaimana suara
+                dapat diolah dan dianalisis sebagai data audio.
+                Hasil rekaman dapat menunjukkan kemiripan
+                dengan pola referensi yang digunakan dalam simulasi.
+                Persentase yang ditampilkan merupakan skor simulasi
+                berdasarkan karakteristik rekaman audio, sehingga
+
+                <b>
+                    hasil ini tidak dapat digunakan untuk menentukan
+                    apakah seseorang terkena TBC dan bukan merupakan
+                    diagnosis medis.
+                </b>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ACTION
+            ========================== -->
+
+            <div class="result-actions">
+
+                <a
+                    href="index.html#recorder"
+                    class="retry-button"
+                >
+
+                    ↻
+
+                    Analisis Rekaman Lagi
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="result-footer">
+
+        <strong>
+            CoughAnalyzer
+        </strong>
+
+        <span>
+            Audio analysis project for educational purposes.
+        </span>
+
+    </footer>
+
+
+
+    <!-- =========================
+         RESULT SCRIPT
+    ========================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+
+                const durationElement =
+                    document.getElementById(
+                        "resultDuration"
+                    );
+
+
+                const scoreElement =
+                    document.getElementById(
+                        "resultScore"
+                    );
+
+
+                const scoreTextElement =
+                    document.getElementById(
+                        "resultScoreText"
+                    );
+
+
+                const descriptionElement =
+                    document.getElementById(
+                        "resultDescription"
+                    );
+
+
+                const savedResult =
+                    localStorage.getItem(
+                        "coughAnalyzerResult"
+                    );
+
+
+                if (!savedResult) {
+
+                    if (descriptionElement) {
+
+                        descriptionElement.textContent =
+                            "Belum ada hasil analisis. Silakan lakukan rekaman terlebih dahulu.";
+
+                    }
+
+                    return;
+
+                }
+
+
+                try {
+
+
+                    const result =
+                        JSON.parse(
+                            savedResult
+                        );
+
+
+                    /* =========================
+                       DURATION
+                    ========================== */
+
+                    if (
+                        result.duration &&
+                        durationElement
+                    ) {
+
+                        durationElement.textContent =
+                            result.duration;
+
+                    }
+
+
+
+                    /* =========================
+                       SCORE
+                    ========================== */
+
+                    if (
+                        typeof result.score === "number"
+                    ) {
+
+
+                        const score =
+                            result.score;
+
+
+                        /* SCORE NUMBER */
+
+                        if (scoreElement) {
+
+                            scoreElement.textContent =
+                                score + "%";
+
+                        }
+
+
+                        /* SCORE TEXT */
+
+                        if (scoreTextElement) {
+
+                            scoreTextElement.textContent =
+                                score + "%";
+
+                        }
+
+
+
+                        /* =========================
+                           SCORE CATEGORY + EDUCATION
+                        ========================== */
+
+                        let title = "";
+                        let category = "";
+                        let description = "";
+                        let action = "";
+
+
+                        if (score <= 39) {
+
+                            category =
+                                "Masih cukup jauh";
+
+                            title =
+                                "🫁 Kenali TBC";
+
+                            description =
+                                "TBC adalah penyakit infeksi yang paling sering menyerang paru-paru. Penyebabnya adalah bakteri <em>Mycobacterium tuberculosis</em>.";
+
+                            action =
+                                "tetap jaga kesehatan dan kenali gejalanya.";
+
+                        }
+
+
+                        else if (score <= 59) {
+
+                            category =
+                                "Mulai mendekati";
+
+                            title =
+                                "🌬️ Waspadai Penularannya";
+
+                            description =
+                                "TBC paru dapat menular melalui udara saat penderita TBC aktif batuk, bersin, berbicara, atau bernapas. Risiko lebih tinggi jika sering berada dekat dengan penderita dalam waktu lama.";
+
+                            action =
+                                "perhatikan kondisi diri dan hindari kontak dekat jika sedang memiliki gejala.";
+
+                        }
+
+
+                        else if (score <= 79) {
+
+                            category =
+                                "Cukup mendekati";
+
+                            title =
+                                "⚠️ Kenali Gejalanya";
+
+                            description =
+                                "Batuk berkepanjangan, demam, berkeringat di malam hari, mudah lelah, nyeri dada, atau berat badan menurun dapat menjadi gejala TBC.";
+
+                            action =
+                                "jika mengalami gejala yang menetap, lakukan pemeriksaan ke tenaga kesehatan.";
+
+                        }
+
+
+                        else {
+
+                            category =
+                                "Semakin mendekati";
+
+                            title =
+                                "🩺 Pemeriksaan & Penanganan";
+
+                            description =
+                                "TBC <strong>tidak bisa dipastikan dari suara batuk atau skor aplikasi</strong>. Pemeriksaan oleh tenaga kesehatan diperlukan untuk memastikan diagnosis. Jika TBC terdiagnosis, penyakit ini dapat diobati dengan obat khusus dan pengobatan perlu dijalani sesuai arahan tenaga kesehatan.";
+
+                            action =
+                                "hasil ini hanya untuk edukasi. Jika memiliki gejala atau kekhawatiran, lakukan pemeriksaan lebih lanjut dengan tenaga medis.";
+
+                        }
+
+
+
+                        /* =========================
+                           UPDATE EDUCATION CARD
+                        ========================== */
+
+                        const educationCategory =
+                            document.getElementById(
+                                "educationCategory"
+                            );
+
+
+                        const educationTitle =
+                            document.getElementById(
+                                "educationTitle"
+                            );
+
+
+                        const educationDescription =
+                            document.getElementById(
+                                "educationDescription"
+                            );
+
+
+                        const educationAction =
+                            document.getElementById(
+                                "educationAction"
+                            );
+
+
+                        if (educationCategory) {
+
+                            educationCategory.textContent =
+                                category;
+
+                        }
+
+
+                        if (educationTitle) {
+
+                            educationTitle.innerHTML =
+                                title;
+
+                        }
+
+
+                        if (educationDescription) {
+
+                            educationDescription.innerHTML =
+                                description;
+
+                        }
+
+
+                        if (educationAction) {
+
+                            educationAction.textContent =
+                                action;
+
+                        }
+
+                    }
+
+                }
+
+
+                catch (error) {
+
+                    console.error(
+                        "Gagal membaca hasil:",
+                        error
+                    );
+
+
+                    if (descriptionElement) {
+
+                        descriptionElement.textContent =
+                            "Hasil analisis tidak dapat dibaca. Silakan lakukan rekaman kembali.";
+
+                    }
+
+                }
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>

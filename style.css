@@ -1,0 +1,4784 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #061426;
+    color: #f5f8ff;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(6, 20, 38, 0.82);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+}
+
+.nav-container {
+    width:
+        min(1180px, calc(100% - 40px));
+
+    height: 78px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.logo-mark {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    font-size: 0;
+}
+
+.logo-mark img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: transparent;
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(45, 180, 255, 0.25)
+        );
+
+    transition:
+        transform .25s ease;
+}
+
+.logo:hover .logo-mark img {
+    transform:
+        rotate(-5deg)
+        scale(1.05);
+}
+
+.logo-text {
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: -.5px;
+}
+
+.logo-text span {
+    color: #40bfff;
+}
+
+
+/* NAV MENU */
+
+.desktop-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+}
+
+.desktop-menu a {
+    position: relative;
+
+    color:
+        rgba(255, 255, 255, .62);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        color .2s ease;
+}
+
+.desktop-menu a:hover,
+.desktop-menu a.active {
+    color: white;
+}
+
+.desktop-menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #31bfff,
+            #ff5472
+        );
+
+    transition:
+        width .25s ease;
+}
+
+.desktop-menu a:hover::after,
+.desktop-menu a.active::after {
+    width: 100%;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    cursor: pointer;
+}
+
+.mobile-menu span {
+    display: block;
+
+    width: 19px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 760px;
+
+    padding:
+        150px
+        max(20px, 6vw)
+        90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(37,159,255,.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 25% 70%,
+            rgba(255,66,99,.10),
+            transparent 30%
+        ),
+
+        #061426;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -260px;
+    bottom: -280px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,74,111,.05);
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    width:
+        min(680px, 100%);
+
+    min-width: 0;
+}
+
+.hero-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        8px 13px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(47,170,255,.09);
+
+    border:
+        1px solid
+        rgba(55,181,255,.18);
+
+    color: #66caff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero-label-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff5c73;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,92,115,.8);
+}
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-title {
+    margin-top: 28px;
+
+    width: max-content;
+    max-width: none;
+
+    font-size:
+        clamp(48px, 7vw, 88px);
+
+    line-height: 1.02;
+
+    letter-spacing: -4px;
+
+    font-weight: 900;
+
+    overflow: visible;
+}
+
+.hero-title > span {
+    display: block;
+
+    width: max-content;
+    max-width: none;
+
+    margin: 0;
+    padding: 0 12px 0 0;
+
+    white-space: nowrap;
+
+    font-size: 1em;
+    line-height: 1.02;
+    font-weight: 900;
+    letter-spacing: -4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #36bfff,
+            #a77cff 48%,
+            #ff5c73
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* KEDUA BARIS HARUS IDENTIK */
+.hero-title > span {
+    display: block;
+
+    width: fit-content;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    white-space: nowrap;
+
+    font-size: 1em;
+
+    line-height: 1.02;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #36bfff,
+            #a77cff 48%,
+            #ff5c73
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* PENGEMBANGAN & REKA TB */
+.hero-title-line {
+    display: block;
+
+    width: max-content;
+
+    max-width: none;
+
+    padding-right: 20px;
+
+    padding-bottom: 10px;
+
+    white-space: nowrap;
+
+    overflow: visible;
+
+    background:
+        linear-gradient(
+            90deg,
+            #36bfff,
+            #a77cff 48%,
+            #ff5c73
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+/* Pastikan keduanya benar-benar sama ukuran */
+.hero-title > span:first-child,
+.hero-title > span:last-child {
+    font-size: inherit;
+
+    line-height: inherit;
+
+    font-weight: inherit;
+
+    letter-spacing: inherit;
+}
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-description {
+    max-width: 510px;
+
+    margin-top: 24px;
+
+    color:
+        rgba(232,241,255,.62);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   HERO META
+========================================= */
+
+.hero-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 38px;
+}
+
+.hero-meta div:not(.meta-line) {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.hero-meta strong {
+    font-size: 14px;
+
+    color: #ff657b;
+}
+
+.hero-meta span {
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.meta-line {
+    width: 35px;
+    height: 1px;
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+
+/* =========================================
+   HERO BUTTON
+========================================= */
+
+.hero-start-button {
+    width: 205px;
+
+    margin-top: 30px;
+    margin-left: -8px;
+
+    padding: 14px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #168de9,
+            #9a62ed 52%,
+            #f05271
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(31,139,230,.22);
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.hero-start-button:hover {
+    transform:
+        translate(-3px, -4px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(31,139,230,.32);
+}
+
+.hero-start-button span {
+    font-size: 13px;
+}
+
+.hero-start-button strong {
+    font-size: 19px;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    width: 410px;
+    height: 410px;
+
+    flex-shrink: 0;
+
+    margin-left: -5px;
+    margin-right: -5px;
+
+    transform:
+        translateX(-22px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   OUTER CIRCLES
+========================================= */
+
+.hero-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(57,188,255,.15);
+
+    pointer-events: none;
+}
+
+.circle-large {
+    inset: 28px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(44,170,255,.08),
+            rgba(255,72,103,.025) 55%,
+            transparent 72%
+        );
+
+    box-shadow:
+        inset 0 0 70px
+        rgba(40,167,255,.08);
+}
+
+.circle-medium {
+    inset: 82px;
+
+    border-color:
+        rgba(255,87,112,.18);
+
+    background:
+        rgba(255,255,255,.012);
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.hero-orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(79,190,255,.2);
+
+    pointer-events: none;
+}
+
+.orbit-one {
+    inset: 8px;
+
+    transform:
+        rotate(25deg);
+}
+
+.orbit-two {
+    inset: 65px;
+
+    transform:
+        rotate(-35deg)
+        scaleX(1.28);
+}
+
+
+/* =========================================
+   RECORDING VISUAL
+========================================= */
+
+.recording-visual {
+    position: relative;
+
+    width: 315px;
+    height: 315px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10;
+}
+
+
+/* EXTRA GLASS CIRCLE */
+
+.recording-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(44,181,255,.06),
+            transparent 68%
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.035);
+
+    box-shadow:
+        0 0 80px
+        rgba(39,177,255,.07);
+
+    pointer-events: none;
+}
+
+
+/* FLOATING REC DOT */
+
+.recording-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    top: 24px;
+    right: 35px;
+
+    border-radius: 50%;
+
+    background: #ff5c73;
+
+    box-shadow:
+        0 0 18px
+        rgba(255,92,115,.75);
+
+    animation:
+        recBlink
+        1.4s ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   RECORDING GLOW
+========================================= */
+
+.recording-glow {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(48,188,255,.22),
+            rgba(255,75,105,.08) 48%,
+            transparent 72%
+        );
+
+    filter: blur(18px);
+
+    animation:
+        recordingGlow
+        2.8s ease-in-out
+        infinite;
+}
+
+@keyframes recordingGlow {
+
+    0%,
+    100% {
+        transform:
+            scale(.9);
+
+        opacity: .65;
+    }
+
+    50% {
+        transform:
+            scale(1.08);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   RECORDING RINGS
+========================================= */
+
+.recording-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(50,187,255,.2);
+
+    pointer-events: none;
+}
+
+.ring-a {
+    width: 275px;
+    height: 275px;
+
+    animation:
+        recordingRing
+        3.5s ease-in-out
+        infinite;
+}
+
+.ring-b {
+    width: 225px;
+    height: 225px;
+
+    border-color:
+        rgba(255,82,110,.18);
+
+    animation:
+        recordingRing
+        3.5s ease-in-out
+        infinite
+        .5s;
+}
+
+.ring-c {
+    width: 180px;
+    height: 180px;
+
+    border-style: dashed;
+
+    border-color:
+        rgba(70,192,255,.25);
+
+    animation:
+        ringRotate
+        12s linear
+        infinite;
+}
+
+@keyframes recordingRing {
+
+    0%,
+    100% {
+        transform:
+            scale(.94);
+
+        opacity: .55;
+    }
+
+    50% {
+        transform:
+            scale(1.04);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes ringRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   RECORDING CENTER
+========================================= */
+
+.recording-center {
+    position: relative;
+
+    z-index: 20;
+
+    width: 128px;
+    height: 128px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24,147,234,.95),
+            rgba(72,77,176,.95)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    box-shadow:
+        0 0 35px
+        rgba(42,179,255,.28),
+
+        0 18px 45px
+        rgba(0,0,0,.28);
+
+    animation:
+        recordingCenter
+        3s ease-in-out
+        infinite;
+}
+
+@keyframes recordingCenter {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+
+}
+
+
+/* =========================================
+   REC STATUS
+========================================= */
+
+.recording-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 9px;
+
+    color:
+        rgba(255,255,255,.8);
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.recording-status span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #ff526d;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,82,109,.9);
+
+    animation:
+        recBlink
+        1s infinite;
+}
+
+@keyframes recBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .3;
+    }
+
+}
+
+
+/* =========================================
+   RECORDING MICROPHONE
+========================================= */
+
+.recording-mic {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+}
+
+.recording-mic svg {
+    width: 34px;
+    height: 34px;
+
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   HERO WAVEFORM
+========================================= */
+
+.hero-waveform {
+    position: absolute;
+
+    z-index: 25;
+
+    width: 345px;
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    pointer-events: none;
+}
+
+.hero-waveform span {
+    width: 4px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #39bfff,
+            #ff5b73
+        );
+
+    opacity: .72;
+
+    animation:
+        heroWave
+        .9s ease-in-out
+        infinite alternate;
+}
+
+
+/* WAVE HEIGHTS */
+
+.hero-waveform span:nth-child(1) {
+    height: 18px;
+}
+
+.hero-waveform span:nth-child(2) {
+    height: 30px;
+    animation-delay: .08s;
+}
+
+.hero-waveform span:nth-child(3) {
+    height: 42px;
+    animation-delay: .15s;
+}
+
+.hero-waveform span:nth-child(4) {
+    height: 25px;
+    animation-delay: .22s;
+}
+
+.hero-waveform span:nth-child(5) {
+    height: 55px;
+    animation-delay: .30s;
+}
+
+.hero-waveform span:nth-child(6) {
+    height: 34px;
+    animation-delay: .38s;
+}
+
+.hero-waveform span:nth-child(7) {
+    height: 62px;
+    animation-delay: .45s;
+}
+
+.hero-waveform span:nth-child(8) {
+    height: 42px;
+    animation-delay: .52s;
+}
+
+.hero-waveform span:nth-child(9) {
+    height: 68px;
+    animation-delay: .59s;
+}
+
+.hero-waveform span:nth-child(10) {
+    height: 50px;
+    animation-delay: .66s;
+}
+
+.hero-waveform span:nth-child(11) {
+    height: 65px;
+    animation-delay: .73s;
+}
+
+.hero-waveform span:nth-child(12) {
+    height: 38px;
+    animation-delay: .80s;
+}
+
+.hero-waveform span:nth-child(13) {
+    height: 55px;
+    animation-delay: .87s;
+}
+
+.hero-waveform span:nth-child(14) {
+    height: 30px;
+    animation-delay: .94s;
+}
+
+.hero-waveform span:nth-child(15) {
+    height: 45px;
+    animation-delay: 1s;
+}
+
+.hero-waveform span:nth-child(16) {
+    height: 25px;
+    animation-delay: 1.08s;
+}
+
+.hero-waveform span:nth-child(17) {
+    height: 52px;
+    animation-delay: 1.15s;
+}
+
+.hero-waveform span:nth-child(18) {
+    height: 35px;
+    animation-delay: 1.22s;
+}
+
+.hero-waveform span:nth-child(19) {
+    height: 25px;
+    animation-delay: 1.30s;
+}
+
+.hero-waveform span:nth-child(20) {
+    height: 16px;
+    animation-delay: 1.38s;
+}
+
+@keyframes heroWave {
+
+    from {
+        transform:
+            scaleY(.55);
+
+        opacity: .45;
+    }
+
+    to {
+        transform:
+            scaleY(1.08);
+
+        opacity: .95;
+    }
+
+}
+
+
+/* =========================================
+   RECORDING CAPTION
+========================================= */
+
+.recording-caption {
+    position: absolute;
+
+    bottom: -15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        8px 13px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(5,20,38,.78);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+.recording-caption span {
+    color: #ff526d;
+
+    font-size: 8px;
+
+    animation:
+        recBlink
+        1s infinite;
+}
+
+
+/* =========================================
+   HERO BACKGROUND GLOW
+========================================= */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    width: 300px;
+    height: 300px;
+
+    right: -100px;
+    top: 50px;
+
+    background:
+        rgba(33,165,255,.09);
+}
+
+.hero-glow-two {
+    width: 250px;
+    height: 250px;
+
+    left: -100px;
+    bottom: -100px;
+
+    background:
+        rgba(255,60,100,.07);
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+.section-container {
+    width:
+        min(1120px, calc(100% - 40px));
+
+    margin: auto;
+}
+
+.section-label {
+    color: #48bdff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin-top: 15px;
+
+    font-size:
+        clamp(40px, 6vw, 68px);
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+    color: #ff6177;
+}
+
+.section-heading p {
+    max-width: 450px;
+
+    margin-top: 22px;
+
+    color:
+        rgba(255,255,255,.52);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how-section {
+    padding: 120px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #061426,
+            #081a30
+        );
+}
+
+.process-list {
+    margin-top: 65px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.process-item {
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    gap: 30px;
+
+    padding: 28px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:
+        padding-left .25s ease;
+}
+
+.process-item:hover {
+    padding-left: 12px;
+}
+
+.process-number {
+    color: #35bfff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+.process-content h3 {
+    font-size: 19px;
+}
+
+.process-content p {
+    max-width: 580px;
+
+    margin-top: 7px;
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-section {
+    position: relative;
+
+    padding: 130px 0;
+
+    overflow: hidden;
+
+    background: #07182b;
+}
+
+.about-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1120px, calc(100% - 40px));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.about-content p {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,.54);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+.about-visual {
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+
+/* =========================================
+   SCANNER
+========================================= */
+
+.scanner {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.scanner-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(58,190,255,.22);
+}
+
+.ring-1 {
+    inset: 10px;
+}
+
+.ring-2 {
+    inset: 45px;
+
+    border-color:
+        rgba(255,86,113,.25);
+}
+
+.ring-3 {
+    inset: 85px;
+
+    border-style: dashed;
+}
+
+.scanner-line {
+    position: absolute;
+
+    width: 2px;
+    height: 115%;
+
+    background:
+        linear-gradient(
+            transparent,
+            #35bfff,
+            transparent
+        );
+
+    animation:
+        scanRotate
+        4s linear
+        infinite;
+}
+
+@keyframes scanRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+.scanner-center {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #137ad0,
+            #a43f70
+        );
+
+    box-shadow:
+        0 0 50px
+        rgba(48,178,255,.22);
+}
+
+.scanner-center span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 15px white;
+}
+
+.scanner-center small {
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.scanner-info {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+.scanner-info span {
+    color: #48bdff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.scanner-info strong {
+    color: #ff6177;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.about-glow {
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -150px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(41,167,255,.07);
+
+    filter: blur(20px);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta-section {
+    position: relative;
+
+    padding: 140px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(42,160,255,.13),
+            transparent 35%
+        ),
+        #061426;
+}
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.cta-content h2 {
+    margin-top: 18px;
+
+    font-size:
+        clamp(48px, 7vw, 82px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+}
+
+.cta-content h2 span {
+    color: #ff6076;
+}
+
+.cta-content p {
+    margin-top: 20px;
+
+    color:
+        rgba(255,255,255,.48);
+}
+
+.cta-button {
+    width: 230px;
+
+    margin: 35px auto 0;
+
+    padding:
+        16px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1788e8,
+            #e54e70
+        );
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 15px 40px
+        rgba(26,132,229,.2);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.cta-button:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(26,132,229,.3);
+}
+
+.cta-button-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.cta-arrow {
+    font-size: 20px;
+}
+
+.cta-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,62,101,.04);
+
+    filter: blur(25px);
+}
+
+
+/* =========================================
+   RECORDER
+========================================= */
+
+.recorder-section {
+    position: relative;
+
+    padding: 120px 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07172a,
+            #041020
+        );
+}
+
+.recorder-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(760px, 100%);
+
+    margin: auto;
+}
+
+.recorder-header {
+    text-align: center;
+}
+
+.recorder-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #4bc0ff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.label-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff5c73;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,92,115,.8);
+}
+
+.recorder-header h2 {
+    margin-top: 17px;
+
+    font-size:
+        clamp(40px, 7vw, 66px);
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+}
+
+.recorder-header h2 span {
+    color: #ff6177;
+}
+
+.recorder-header p {
+    max-width: 470px;
+
+    margin: 20px auto 0;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.analysis-progress {
+    display: flex;
+
+    align-items: center;
+
+    margin:
+        45px auto 30px;
+
+    max-width: 500px;
+}
+
+.progress-step {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        rgba(255,255,255,.32);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.progress-step.active {
+    color: white;
+}
+
+.progress-step.completed {
+    color: #4cc3ff;
+}
+
+.step-number {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    font-size: 9px;
+}
+
+.progress-step.active .step-number {
+    background: #188ce7;
+
+    border-color: #3dbaff;
+
+    box-shadow:
+        0 0 18px
+        rgba(40,172,255,.3);
+}
+
+.progress-step.completed .step-number {
+    background:
+        rgba(52,189,255,.12);
+
+    border-color:
+        rgba(52,189,255,.35);
+}
+
+.progress-line {
+    flex: 1;
+
+    height: 1px;
+
+    margin:
+        0 12px;
+
+    background:
+        rgba(255,255,255,.1);
+}
+
+
+/* =========================================
+   RECORDER CARD
+========================================= */
+
+.recorder-card {
+    position: relative;
+
+    padding:
+        35px 25px 30px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at center top,
+            rgba(44,170,255,.1),
+            transparent 50%
+        ),
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.2);
+}
+
+.record-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 13px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        rgba(255,255,255,.62);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.status-indicator {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.35);
+}
+
+.status-indicator.recording {
+    background: #ff526d;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,82,109,.8);
+
+    animation:
+        statusPulse
+        1s infinite;
+}
+
+@keyframes statusPulse {
+
+    50% {
+        transform:
+            scale(1.5);
+
+        opacity: .55;
+    }
+
+}
+
+
+/* =========================================
+   MIC AREA
+========================================= */
+
+.mic-area {
+    position: relative;
+
+    width: 250px;
+    height: 250px;
+
+    margin:
+        25px auto 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.mic-circle {
+    position: relative;
+
+    z-index: 5;
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c92ec,
+            #183b74
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 45px
+        rgba(36,168,255,.28);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.mic-circle.recording {
+    background:
+        linear-gradient(
+            145deg,
+            #f04e6a,
+            #762d55
+        );
+
+    box-shadow:
+        0 0 50px
+        rgba(255,75,105,.35);
+
+    animation:
+        micPulse
+        1.3s infinite;
+}
+
+@keyframes micPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.06);
+    }
+
+}
+
+.mic-circle svg {
+    width: 48px;
+    height: 48px;
+
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.mic-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(48,180,255,.18);
+}
+
+.mic-ring.ring-one {
+    inset: 25px;
+}
+
+.mic-ring.ring-two {
+    inset: 5px;
+
+    border-color:
+        rgba(255,86,111,.14);
+}
+
+.mic-ring.ring-three {
+    inset: -20px;
+
+    border-style: dashed;
+}
+
+.mic-glow {
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(41,173,255,.08);
+
+    filter: blur(18px);
+}
+
+
+/* =========================================
+   TIMER
+========================================= */
+
+.record-timer {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.record-helper {
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,.42);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   WAVEFORM
+========================================= */
+
+.waveform {
+    width:
+        min(400px, 90%);
+
+    height: 45px;
+
+    margin:
+        20px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+}
+
+.waveform span {
+    width: 4px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #31bfff,
+            #ff5871
+        );
+
+    opacity: .35;
+
+    transition:
+        height .2s ease,
+        opacity .2s ease;
+}
+
+.waveform span:nth-child(1) {
+    height: 13px;
+}
+
+.waveform span:nth-child(2) {
+    height: 25px;
+}
+
+.waveform span:nth-child(3) {
+    height: 34px;
+}
+
+.waveform span:nth-child(4) {
+    height: 19px;
+}
+
+.waveform span:nth-child(5) {
+    height: 40px;
+}
+
+.waveform span:nth-child(6) {
+    height: 25px;
+}
+
+.waveform span:nth-child(7) {
+    height: 35px;
+}
+
+.waveform span:nth-child(8) {
+    height: 18px;
+}
+
+.waveform span:nth-child(9) {
+    height: 31px;
+}
+
+.waveform span:nth-child(10) {
+    height: 40px;
+}
+
+.waveform span:nth-child(11) {
+    height: 23px;
+}
+
+.waveform span:nth-child(12) {
+    height: 35px;
+}
+
+.waveform span:nth-child(13) {
+    height: 20px;
+}
+
+.waveform span:nth-child(14) {
+    height: 38px;
+}
+
+.waveform span:nth-child(15) {
+    height: 27px;
+}
+
+.waveform span:nth-child(16) {
+    height: 35px;
+}
+
+.waveform span:nth-child(17) {
+    height: 17px;
+}
+
+.waveform span:nth-child(18) {
+    height: 30px;
+}
+
+.waveform span:nth-child(19) {
+    height: 22px;
+}
+
+.waveform span:nth-child(20) {
+    height: 38px;
+}
+
+.waveform.active span {
+    animation:
+        waveformMove
+        .7s ease-in-out
+        infinite alternate;
+
+    opacity: .85;
+}
+
+.waveform.active span:nth-child(2n) {
+    animation-delay: .1s;
+}
+
+.waveform.active span:nth-child(3n) {
+    animation-delay: .2s;
+}
+
+@keyframes waveformMove {
+
+    from {
+        transform:
+            scaleY(.5);
+    }
+
+    to {
+        transform:
+            scaleY(1.15);
+    }
+
+}
+
+/* =========================================
+   RECORD BUTTON
+========================================= */
+.record-button {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 18px auto 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff5b72,
+            #d93659
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(255,67,98,.28);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.record-button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 16px 40px
+        rgba(255,67,98,.35);
+}
+
+.record-button.recording {
+    background:
+        linear-gradient(
+            145deg,
+            #ff385e,
+            #a82348
+        );
+}
+
+.record-button:disabled {
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+
+/* =========================================
+   RECORD BUTTON INNER
+========================================= */
+
+.record-button-inner {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.record-button svg {
+    width: 28px;
+    height: 28px;
+
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   MULAI REKAM TEXT
+========================================= */
+
+.record-button-text {
+    display: block;
+
+    width: 100%;
+
+    margin: 14px auto 0;
+
+    color: rgba(255,255,255,.52);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   RECORDING PREVIEW
+========================================= */
+
+.recording-preview {
+    display: none;
+
+    margin-top: 24px;
+
+    padding: 24px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24,72,130,.58),
+            rgba(91,25,65,.45)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.18);
+}
+
+.recording-preview.show {
+    display: block;
+
+    animation:
+        previewAppear
+        .45s ease forwards;
+}
+
+@keyframes previewAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.preview-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.preview-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ff6a7e;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.preview-header h3 {
+    font-size: 19px;
+}
+
+.preview-duration {
+    padding:
+        7px 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        rgba(255,255,255,.7);
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   AUDIO PLAYER
+========================================= */
+
+.audio-player-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(3,15,32,.6);
+}
+
+.audio-play-button {
+    flex:
+        0 0 50px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #36bfff,
+            #ff5570
+        );
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 8px 25px
+        rgba(255,70,105,.25);
+
+    transition:
+        transform .2s ease;
+}
+
+.audio-play-button:hover {
+    transform:
+        scale(1.06);
+}
+
+.audio-player-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.audio-wave-preview {
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+.audio-wave-preview span {
+    flex: 1;
+
+    max-width: 7px;
+
+    height: 12px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #39bfff,
+            #ff5c76
+        );
+
+    opacity: .55;
+}
+
+.audio-wave-preview span:nth-child(2n) {
+    height: 22px;
+}
+
+.audio-wave-preview span:nth-child(3n) {
+    height: 30px;
+}
+
+.audio-wave-preview.playing span {
+    animation:
+        audioWave
+        .8s ease-in-out
+        infinite alternate;
+}
+
+@keyframes audioWave {
+
+    from {
+        transform:
+            scaleY(.45);
+
+        opacity: .4;
+    }
+
+    to {
+        transform:
+            scaleY(1.15);
+
+        opacity: 1;
+    }
+
+}
+
+.audio-time {
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        rgba(255,255,255,.42);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   ANALYZE BUTTON
+========================================= */
+
+.analyze-audio-button {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding:
+        15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1788e8,
+            #e34e70
+        );
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.analyze-audio-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(35,125,230,.25);
+}
+
+.analyze-audio-button:disabled {
+    cursor: wait;
+
+    opacity: .65;
+}
+
+
+/* =========================================
+   RECORD AGAIN
+========================================= */
+
+.record-again-button {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255,255,255,.48);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.record-again-button:hover {
+    color: #ff6b7e;
+}
+
+
+/* =========================================
+   TIPS
+========================================= */
+
+.recorder-tips {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.tip-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,87,111,.1);
+
+    color: #ff6076;
+}
+
+.tip-content strong {
+    font-size: 12px;
+}
+
+.tip-content p {
+    margin-top: 5px;
+
+    color:
+        rgba(255,255,255,.43);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.privacy-note {
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,.3);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.privacy-note span {
+    color: #45bfff;
+}
+
+
+/* =========================================
+   RECORDER BACKGROUND
+========================================= */
+
+.recorder-bg-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(20px);
+}
+
+.recorder-bg-glow.glow-one {
+    width: 300px;
+    height: 300px;
+
+    left: -160px;
+    top: 200px;
+
+    background:
+        rgba(35,160,255,.07);
+}
+
+.recorder-bg-glow.glow-two {
+    width: 300px;
+    height: 300px;
+
+    right: -160px;
+    bottom: 100px;
+
+    background:
+        rgba(255,64,102,.06);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding:
+        50px 20px 30px;
+
+    background: #030c18;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.footer-container {
+    width:
+        min(1120px, 100%);
+
+    margin: auto;
+}
+
+.footer-logo {
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: #42bdff;
+}
+
+.footer-container > p {
+    margin-top: 8px;
+
+    color:
+        rgba(255,255,255,.35);
+
+    font-size: 11px;
+}
+
+.footer-bottom {
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        rgba(255,255,255,.28);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   HERO TABLET / LAPTOP
+========================================= */
+
+@media (max-width: 1100px) and (min-width: 801px) {
+
+    .hero {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        gap: 8px;
+    }
+
+    .hero-content {
+        width:
+            min(560px, 56%);
+    }
+
+    .hero-title {
+        font-size:
+            clamp(46px, 6.4vw, 72px);
+    }
+
+    .hero-visual {
+        width: 360px;
+        height: 360px;
+
+        margin-left: -15px;
+        margin-right: -20px;
+
+        transform:
+            translateX(-12px);
+    }
+
+    .recording-visual {
+        width: 285px;
+        height: 285px;
+    }
+
+    .recording-visual::before {
+        width: 320px;
+        height: 320px;
+    }
+
+    .ring-a {
+        width: 250px;
+        height: 250px;
+    }
+
+    .ring-b {
+        width: 205px;
+        height: 205px;
+    }
+
+    .ring-c {
+        width: 165px;
+        height: 165px;
+    }
+
+    .hero-waveform {
+        width: 315px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-visual {
+        align-self: center;
+
+        width:
+            min(390px, 100%);
+
+        height: 390px;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        transform: none;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE MENU STATE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .desktop-menu.mobile-open {
+        position: absolute;
+
+        top: 78px;
+
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+
+        padding: 18px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+        border-radius: 18px;
+
+        background:
+            rgba(5,19,36,.97);
+
+        border:
+            1px solid
+            rgba(255,255,255,.08);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.25);
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        width:
+            calc(100% - 30px);
+    }
+
+    .logo-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding:
+            120px
+            20px
+            70px;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(40px, 12.5vw, 65px);
+
+        letter-spacing:
+            -3px;
+
+        line-height:
+            1.02;
+    }
+
+    .hero-title-line {
+        padding-right: 14px;
+
+        padding-bottom: 8px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .hero-meta {
+        gap: 10px;
+    }
+
+    .meta-line {
+        width: 20px;
+    }
+
+    .hero-start-button {
+        width: 210px;
+    }
+
+
+    /* HERO RECORDING */
+
+    .hero-visual {
+        width: 320px;
+        height: 320px;
+
+        margin-top: 5px;
+    }
+
+    .recording-visual {
+        width: 270px;
+        height: 270px;
+    }
+
+    .recording-visual::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .recording-visual::after {
+        top: 15px;
+        right: 20px;
+    }
+
+    .circle-large {
+        inset: 15px;
+    }
+
+    .circle-medium {
+        inset: 65px;
+    }
+
+    .orbit-one {
+        inset: 0;
+    }
+
+    .orbit-two {
+        inset: 50px;
+    }
+
+    .ring-a {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ring-b {
+        width: 195px;
+        height: 195px;
+    }
+
+    .ring-c {
+        width: 155px;
+        height: 155px;
+    }
+
+    .recording-center {
+        width: 108px;
+        height: 108px;
+    }
+
+    .recording-mic {
+        width: 50px;
+        height: 50px;
+    }
+
+    .recording-mic svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .recording-glow {
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero-waveform {
+        width: 285px;
+
+        gap: 4px;
+    }
+
+    .hero-waveform span {
+        width: 3px;
+    }
+
+    .recording-caption {
+        bottom: -10px;
+
+        font-size: 7px;
+    }
+
+
+    /* GENERAL */
+
+    .how-section,
+    .about-section,
+    .recorder-section {
+        padding-top: 90px;
+
+        padding-bottom: 90px;
+    }
+
+    .section-container,
+    .about-container {
+        width:
+            calc(100% - 30px);
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size:
+            clamp(38px, 12vw, 55px);
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    /* PROCESS */
+
+    .process-item {
+        grid-template-columns:
+            45px 1fr;
+
+        gap: 12px;
+    }
+
+
+    /* SCANNER */
+
+    .scanner {
+        width: 260px;
+        height: 260px;
+    }
+
+
+    /* CTA */
+
+    .cta-section {
+        padding:
+            100px 20px;
+    }
+
+    .cta-content h2 {
+        font-size:
+            clamp(43px, 12vw, 65px);
+
+        letter-spacing:
+            -3px;
+    }
+
+
+    /* RECORDER */
+
+    .recorder-header h2 {
+        font-size:
+            clamp(38px, 11vw, 58px);
+
+        letter-spacing:
+            -2px;
+    }
+
+    .recorder-card {
+        padding:
+            28px 16px;
+    }
+
+    .analysis-progress {
+        gap: 3px;
+    }
+
+    .progress-line {
+        margin:
+            0 5px;
+    }
+
+    .progress-step {
+        gap: 5px;
+    }
+
+    .progress-step span {
+        font-size: 9px;
+    }
+
+    .recording-preview {
+        padding: 18px;
+    }
+
+    .preview-header h3 {
+        font-size: 17px;
+    }
+
+    .audio-player-box {
+        gap: 10px;
+    }
+
+    .audio-play-button {
+        flex-basis: 45px;
+
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .hero-title {
+        font-size:
+            39px;
+
+        letter-spacing:
+            -2px;
+    }
+
+    .hero-title-line {
+        padding-right: 10px;
+    }
+
+    .hero-visual {
+        width: 290px;
+        height: 290px;
+    }
+
+    .recording-visual {
+        width: 245px;
+        height: 245px;
+    }
+
+    .recording-visual::before {
+        width: 270px;
+        height: 270px;
+    }
+
+    .recording-visual::after {
+        top: 12px;
+        right: 16px;
+    }
+
+    .ring-a {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ring-b {
+        width: 175px;
+        height: 175px;
+    }
+
+    .ring-c {
+        width: 140px;
+        height: 140px;
+    }
+
+    .recording-center {
+        width: 98px;
+        height: 98px;
+    }
+
+    .recording-mic {
+        width: 45px;
+        height: 45px;
+    }
+
+    .recording-mic svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .recording-glow {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero-waveform {
+        width: 260px;
+    }
+
+    .recording-caption {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+    .hero-meta {
+        gap: 7px;
+    }
+
+    .hero-meta strong {
+        font-size: 12px;
+    }
+
+    .hero-meta span {
+        font-size: 9px;
+    }
+
+    .record-timer {
+        font-size: 32px;
+    }
+
+}
+/* =========================================
+   HERO TITLE — FINAL FIX
+========================================= */
+
+@media (min-width: 801px) {
+
+    .hero-content {
+        width: min(650px, 100%);
+        min-width: 0;
+        flex: 1 1 650px;
+        overflow: visible;
+    }
+
+    .hero-title {
+        width: 100%;
+        max-width: none;
+        overflow: visible;
+
+        padding-right: 20px;
+    }
+
+    .hero-title > span {
+        display: block;
+
+        width: max-content;
+        max-width: none;
+
+        white-space: nowrap;
+        overflow: visible;
+
+        padding-right: 12px;
+
+        box-sizing: border-box;
+
+        font-size: inherit;
+        line-height: 1.02;
+        letter-spacing: -4px;
+        font-weight: 900;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE — KEEP NORMAL
+========================================= */
+
+@media (max-width: 800px) {
+
+    .hero-content {
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+
+    .hero-title {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+    }
+
+    .hero-title > span {
+        width: max-content;
+        max-width: 100%;
+        overflow: visible;
+    }
+
+}
+
+
+/* =========================================
+   KENALI TBC — EDUCATIONAL INTRO
+========================================= */
+
+.tbc-intro-section {
+    position: relative;
+
+    padding: 115px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 35%,
+            rgba(42, 171, 255, .08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(255, 76, 108, .06),
+            transparent 30%
+        ),
+        #07182b;
+}
+
+.tbc-intro-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: -210px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(55, 187, 255, .08);
+
+    box-shadow:
+        0 0 100px
+        rgba(42, 171, 255, .06);
+
+    pointer-events: none;
+}
+
+.tbc-intro-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -140px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 73, 106, .055);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+.tbc-intro-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1120px, calc(100% - 40px));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        .78fr 1.22fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+
+/* HEADING */
+
+.tbc-intro-heading {
+    position: sticky;
+
+    top: 120px;
+}
+
+.tbc-intro-heading h2 {
+    margin-top: 16px;
+
+    font-size:
+        clamp(46px, 6vw, 70px);
+
+    line-height: .96;
+
+    letter-spacing: -4px;
+}
+
+.tbc-intro-heading h2 span {
+    color: #ff6177;
+}
+
+.tbc-intro-heading > p {
+    max-width: 390px;
+
+    margin-top: 24px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+/* CONTENT */
+
+.tbc-intro-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.tbc-intro-card {
+    position: relative;
+
+    min-height: 225px;
+
+    padding: 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.12);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.tbc-intro-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -55px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(50,184,255,.07);
+
+    filter: blur(4px);
+
+    pointer-events: none;
+}
+
+.tbc-intro-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(55,187,255,.24);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(55,187,255,.07),
+            rgba(255,255,255,.02)
+        );
+}
+
+
+/* MAIN CARD */
+
+.tbc-intro-main {
+    grid-column: 1 / -1;
+
+    min-height: 205px;
+
+    display: grid;
+
+    grid-template-columns:
+        62px 1fr;
+
+    gap: 22px;
+
+    align-items: start;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(42,178,255,.10),
+            transparent 35%
+        ),
+        rgba(255,255,255,.035);
+}
+
+
+/* ICON */
+
+.tbc-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: #5cc8ff;
+
+    background:
+        rgba(49,188,255,.09);
+
+    border:
+        1px solid
+        rgba(61,191,255,.18);
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    box-shadow:
+        0 0 25px
+        rgba(44,179,255,.08);
+}
+
+
+/* TEXT */
+
+.tbc-card-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #48bdff;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.8px;
+}
+
+.tbc-intro-card h3 {
+    font-size: 20px;
+
+    line-height: 1.2;
+}
+
+.tbc-intro-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 12px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+
+/* NOTE */
+
+.tbc-intro-note {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 2px;
+
+    padding: 18px 20px;
+
+    border-left:
+        2px solid
+        #ff6076;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border-radius:
+        0 14px 14px 0;
+}
+
+.tbc-intro-note > span {
+    flex-shrink: 0;
+
+    color: #ff6076;
+
+    font-size: 15px;
+}
+
+.tbc-intro-note p {
+    color:
+        rgba(255,255,255,.42);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   KENALI TBC — MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .tbc-intro-section {
+        padding:
+            90px 20px;
+    }
+
+    .tbc-intro-container {
+        width:
+            calc(100% - 10px);
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .tbc-intro-heading {
+        position: static;
+    }
+
+    .tbc-intro-heading h2 {
+        font-size:
+            clamp(42px, 13vw, 58px);
+
+        letter-spacing: -3px;
+    }
+
+    .tbc-intro-heading > p {
+        max-width: 100%;
+
+        font-size: 13px;
+    }
+
+    .tbc-intro-content {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .tbc-intro-main {
+        grid-column: auto;
+
+        grid-template-columns:
+            52px 1fr;
+
+        gap: 16px;
+
+        min-height: auto;
+    }
+
+    .tbc-intro-card {
+        min-height: auto;
+
+        padding: 22px;
+    }
+
+    .tbc-card-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 13px;
+
+        font-size: 20px;
+    }
+
+    .tbc-intro-card h3 {
+        font-size: 18px;
+    }
+
+    .tbc-intro-card p {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+    .tbc-intro-note {
+        grid-column: auto;
+
+        margin-top: 0;
+
+        padding:
+            16px 15px;
+    }
+
+}
+
+
+/* =========================================
+   KENALI TBC — EXTRA SMALL
+========================================= */
+
+@media (max-width: 380px) {
+
+    .tbc-intro-section {
+        padding:
+            80px 15px;
+    }
+
+    .tbc-intro-container {
+        width: 100%;
+    }
+
+    .tbc-intro-heading h2 {
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+    .tbc-intro-main {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+}
+/* =========================================
+   HERO MICROPHONE
+   ========================================= */
+
+.hero-mic {
+    position: relative;
+    z-index: 20;
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #188ee8,
+            #394b9b
+        );
+
+    border: 1px solid rgba(255,255,255,.22);
+
+    box-shadow:
+        0 0 45px rgba(42,177,255,.28),
+        0 18px 45px rgba(0,0,0,.25);
+}
+
+.hero-mic svg {
+    position: relative;
+    z-index: 3;
+
+    width: 52px;
+    height: 52px;
+
+    fill: none;
+
+    stroke: white;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.hero-mic-glow {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(47,190,255,.25),
+            transparent 68%
+        );
+
+    filter: blur(14px);
+
+    z-index: -1;
+}
+
+
+/* =========================================
+   HERO SOUND BARS
+   ========================================= */
+
+.sound-bars {
+    position: absolute;
+
+    z-index: 15;
+
+    width: 310px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    pointer-events: none;
+}
+
+.sound-bars span {
+    width: 4px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #39bfff,
+            #ff5b73
+        );
+
+    opacity: .7;
+
+    animation:
+        heroSoundWave
+        .9s ease-in-out
+        infinite alternate;
+}
+
+.sound-bars span:nth-child(1) {
+    height: 18px;
+}
+
+.sound-bars span:nth-child(2) {
+    height: 30px;
+}
+
+.sound-bars span:nth-child(3) {
+    height: 45px;
+}
+
+.sound-bars span:nth-child(4) {
+    height: 28px;
+}
+
+.sound-bars span:nth-child(5) {
+    height: 58px;
+}
+
+.sound-bars span:nth-child(6) {
+    height: 38px;
+}
+
+.sound-bars span:nth-child(7) {
+    height: 68px;
+}
+
+.sound-bars span:nth-child(8) {
+    height: 45px;
+}
+
+.sound-bars span:nth-child(9) {
+    height: 62px;
+}
+
+.sound-bars span:nth-child(10) {
+    height: 35px;
+}
+
+.sound-bars span:nth-child(11) {
+    height: 52px;
+}
+
+.sound-bars span:nth-child(12) {
+    height: 25px;
+}
+
+.sound-bars span:nth-child(13) {
+    height: 18px;
+}
+
+.sound-bars span:nth-child(2n) {
+    animation-delay: .15s;
+}
+
+.sound-bars span:nth-child(3n) {
+    animation-delay: .3s;
+}
+
+@keyframes heroSoundWave {
+
+    from {
+        transform: scaleY(.55);
+        opacity: .4;
+    }
+
+    to {
+        transform: scaleY(1.08);
+        opacity: .9;
+    }
+
+}
+
+
+/* =========================================
+   HERO DESKTOP FIX
+   ========================================= */
+
+@media (min-width: 801px) {
+
+    .hero-content {
+        width: min(650px, 100%);
+        min-width: 0;
+        flex: 1 1 650px;
+
+        overflow: visible;
+    }
+
+    .hero-title {
+        width: 100%;
+        max-width: none;
+
+        overflow: visible;
+
+        padding-right: 20px;
+    }
+
+    .hero-title > span {
+        display: block;
+
+        width: max-content;
+        max-width: none;
+
+        white-space: nowrap;
+
+        overflow: visible;
+
+        padding-right: 12px;
+
+        box-sizing: border-box;
+
+        font-size: inherit;
+        line-height: 1.02;
+
+        letter-spacing: -4px;
+
+        font-weight: 900;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .hero-content {
+        width: 100%;
+        min-width: 0;
+
+        flex: none;
+    }
+
+    .hero-title {
+        width: 100%;
+        max-width: 100%;
+
+        overflow: visible;
+    }
+
+    .hero-title > span {
+        width: max-content;
+        max-width: 100%;
+
+        overflow: visible;
+    }
+
+}
+/* =========================================
+   HERO BUTTON FINAL POSITION
+========================================= */
+
+.hero-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-actions .hero-start-button {
+    width: 205px;
+    margin: 30px 0 0 -8px;
+}
+
+/* Hilangkan titik putih di tombol Hero */
+.hero-actions .cta-button-dot {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .hero-actions .hero-start-button {
+        width: 210px;
+        margin-left: -2px;
+    }
+}
+/* =========================================
+   RECORD BUTTON — TEXT ONLY
+========================================= */
+
+.record-control {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 8px;
+}
+
+.record-button {
+    width: 74px;
+    height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 8px auto 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff5b72,
+            #d93659
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(255,67,98,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.record-button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 18px 45px
+        rgba(255,67,98,.4);
+}
+
+
+/* =========================================
+   TEXT DI TENGAH LINGKARAN
+========================================= */
+
+.record-button-text {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0 8px;
+
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+}
+/* =========================================
+   KENALI TBC — MODERN SVG ICONS
+========================================= */
+
+.tbc-card-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(48, 190, 255, .12),
+            rgba(48, 190, 255, .035)
+        );
+
+    border:
+        1px solid
+        rgba(68, 196, 255, .20);
+
+    color: #5ccaff;
+
+    box-shadow:
+        0 0 28px
+        rgba(48, 185, 255, .08);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* SVG */
+
+.tbc-card-icon svg {
+    width: 29px;
+    height: 29px;
+
+    display: block;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(74, 198, 255, .25)
+        );
+}
+
+
+/* HOVER */
+
+.tbc-intro-card:hover .tbc-card-icon {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(76, 199, 255, .38);
+
+    box-shadow:
+        0 0 32px
+        rgba(48, 185, 255, .14);
+}
+
+
+/* SUPAYA ICON + TEXT SELALU RAPI */
+
+.tbc-intro-card {
+    display: grid;
+
+    grid-template-columns:
+        52px 1fr;
+
+    column-gap: 22px;
+
+    align-items: start;
+}
+
+
+/* CARD UTAMA */
+
+.tbc-intro-main {
+    grid-template-columns:
+        52px 1fr;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .tbc-intro-card {
+        grid-template-columns:
+            46px 1fr;
+
+        column-gap: 16px;
+    }
+
+    .tbc-card-icon {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 14px;
+    }
+
+    .tbc-card-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .tbc-intro-main {
+        grid-template-columns:
+            46px 1fr;
+    }
+
+}
+
+
+/* EXTRA SMALL */
+
+@media (max-width: 380px) {
+
+    .tbc-intro-card,
+    .tbc-intro-main {
+        grid-template-columns: 1fr;
+    }
+
+    .tbc-card-icon {
+        margin-bottom: 4px;
+    }
+
+}
+/* =========================================
+   KENALI TBC — SVG ICON
+========================================= */
+
+.tbc-card-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(48, 190, 255, .12),
+            rgba(48, 190, 255, .035)
+        );
+
+    border: 1px solid rgba(68, 196, 255, .20);
+
+    color: #5ccaff;
+
+    box-shadow:
+        0 0 28px rgba(48, 185, 255, .08);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.tbc-card-icon svg {
+    width: 29px;
+    height: 29px;
+
+    display: block;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(74, 198, 255, .25)
+        );
+}
+
+.tbc-intro-card:hover .tbc-card-icon {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(76, 199, 255, .38);
+
+    box-shadow:
+        0 0 32px
+        rgba(48, 185, 255, .14);
+}
+
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .tbc-intro-card {
+        grid-template-columns: 46px 1fr;
+        column-gap: 16px;
+    }
+
+    .tbc-card-icon {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 14px;
+    }
+
+    .tbc-card-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+
+    .tbc-intro-card,
+    .tbc-intro-main {
+        grid-template-columns: 1fr;
+    }
+
+    .tbc-card-icon {
+        margin-bottom: 4px;
+    }
+
+}
+/* =========================================
+   RECORD BUTTON — PERFECT CENTER
+========================================= */
+
+.record-button {
+    position: relative !important;
+
+    width: 74px !important;
+    height: 74px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 8px auto 0 !important;
+
+    border-radius: 50% !important;
+}
+
+
+/* Sembunyikan elemen icon yang masih mengambil ruang */
+.record-button-inner {
+    display: none !important;
+}
+
+
+/* Teks benar-benar berada di tengah lingkaran */
+.record-button-text {
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    text-align: center !important;
+
+    color: #ffffff !important;
+
+    font-size: 9px !important;
+    font-weight: 900 !important;
+
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+
+    white-space: normal !important;
+}

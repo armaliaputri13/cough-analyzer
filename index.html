@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cough Analyzer</title>
+
+    <meta
+        name="description"
+        content="Cough Analyzer - Analisis suara batuk berbasis audio untuk tujuan edukasi."
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="#beranda"
+                class="logo"
+            >
+
+                <span class="logo-mark">
+
+                    <img
+                        src="images/logo.png"
+                        alt="CoughAnalyzer"
+                    >
+
+                </span>
+
+                <span class="logo-text">
+                    Cough<span>Analyzer</span>
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-menu">
+
+                <a
+                    href="#beranda"
+                    class="active"
+                >
+                    Beranda
+                </a>
+
+                <a href="#kenali-tbc">
+                    Kenali TBC
+                </a>
+
+                <a href="#cara-kerja">
+                    Cara Kerja
+                </a>
+
+                <a href="#tentang">
+                    Tentang
+                </a>
+
+            </nav>
+
+
+            <button
+                class="mobile-menu"
+                type="button"
+                aria-label="Buka menu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="beranda"
+        >
+
+            <div class="hero-glow hero-glow-one"></div>
+
+            <div class="hero-glow hero-glow-two"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+
+                    <span class="hero-label-dot"></span>
+
+                    AUDIO ANALYSIS PROJECT
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    <span>
+                        PENGEMBANGAN
+                    </span>
+
+                    <span class="gradient-text">
+                        REKA TB
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Cough Analyzer menggunakan rekaman suara
+                    untuk melihat karakteristik audio dari suara
+                    batuk secara sederhana dan edukatif.
+
+                </p>
+
+
+                <div class="hero-meta">
+
+                    <div>
+
+                        <strong>
+                            01
+                        </strong>
+
+                        <span>
+                            Record
+                        </span>
+
+                    </div>
+
+
+                    <div class="meta-line"></div>
+
+
+                    <div>
+
+                        <strong>
+                            02
+                        </strong>
+
+                        <span>
+                            Analyze
+                        </span>
+
+                    </div>
+
+
+                    <div class="meta-line"></div>
+
+
+                    <div>
+
+                        <strong>
+                            03
+                        </strong>
+
+                        <span>
+                            Result
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO ACTION -->
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#recorder"
+                        class="cta-button hero-start-button"
+                    >
+
+                        <span class="cta-button-dot"></span>
+
+                        Mulai Analisis
+
+                        <span class="cta-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HERO VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="hero-circle circle-large"></div>
+
+                <div class="hero-circle circle-medium"></div>
+
+
+                <div class="hero-orbit orbit-one"></div>
+
+                <div class="hero-orbit orbit-two"></div>
+
+
+                <div class="hero-mic">
+
+                    <div class="hero-mic-glow"></div>
+
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+
+                        <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z"/>
+
+                        <path d="M19 11a7 7 0 0 1-14 0"/>
+
+                        <path d="M12 18v4"/>
+
+                        <path d="M8 22h8"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="sound-bars">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+       <!-- =========================
+     KENALI TBC
+========================== -->
+
+<section
+    class="tbc-intro-section"
+    id="kenali-tbc"
+>
+
+    <div class="tbc-intro-container">
+
+        <div class="tbc-intro-heading">
+
+            <span class="section-label">
+                KENALI TBC
+            </span>
+
+            <h2>
+                Apa itu
+                <br>
+                <span>TBC?</span>
+            </h2>
+
+            <p>
+                Sebelum mencoba analisis audio,
+                yuk kenali sedikit tentang Tuberkulosis
+                atau TBC dan bagaimana penyakit ini
+                berkaitan dengan sistem pernapasan.
+            </p>
+
+        </div>
+
+
+        <div class="tbc-intro-content">
+
+            <!-- TENTANG TBC -->
+            <article class="tbc-intro-card tbc-intro-main">
+
+                <div class="tbc-card-icon">
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                        <path d="M31 17c-7-7-16-5-20 2-4 7-3 18 1 25 3 6 8 8 13 5 4-2 6-8 6-14V17Z"/>
+                        <path d="M33 17c7-7 16-5 20 2 4 7 3 18-1 25-3 6-8 8-13 5-4-2-6-8-6-14V17Z"/>
+                        <path d="M32 10v43"/>
+                    </svg>
+                </div>
+
+                <div>
+
+                    <span class="tbc-card-label">
+                        TENTANG TBC
+                    </span>
+
+                    <h3>
+                        Tuberkulosis
+                    </h3>
+
+                    <p>
+                        TBC adalah penyakit infeksi yang
+                        disebabkan oleh bakteri
+                        <i>Mycobacterium tuberculosis</i>.
+                        TBC paling sering menyerang paru-paru,
+                        sehingga dapat berkaitan dengan
+                        munculnya gangguan pada sistem
+                        pernapasan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PENULARAN -->
+            <article class="tbc-intro-card">
+
+                <div class="tbc-card-icon">
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                        <circle cx="18" cy="32" r="5"/>
+                        <circle cx="34" cy="20" r="4"/>
+                        <circle cx="48" cy="34" r="6"/>
+                        <circle cx="34" cy="47" r="3"/>
+                        <path d="M23 30l7-7"/>
+                        <path d="M38 21l5 8"/>
+                        <path d="M43 38l-6 6"/>
+                    </svg>
+                </div>
+
+                <div>
+
+                    <span class="tbc-card-label">
+                        PENULARAN
+                    </span>
+
+                    <h3>
+                        Bagaimana TBC Menular?
+                    </h3>
+
+                    <p>
+                        TBC paru dapat menyebar melalui udara
+                        ketika seseorang dengan TBC aktif
+                        pada paru-paru batuk, bersin, berbicara,
+                        atau melakukan aktivitas yang menghasilkan
+                        partikel pernapasan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- GEJALA UMUM -->
+            <article class="tbc-intro-card">
+
+                <div class="tbc-card-icon">
+                    <svg viewBox="0 0 64 64" aria-hidden="true">
+                        <path d="M7 34h10l6-14 8 29 7-20 5 5h14"/>
+                    </svg>
+                </div>
+
+                <div>
+
+                    <span class="tbc-card-label">
+                        GEJALA UMUM
+                    </span>
+
+                    <h3>
+                        Kenali Tandanya
+                    </h3>
+
+                    <p>
+                        Beberapa gejala yang dapat ditemukan
+                        pada TBC antara lain batuk yang berlangsung
+                        lama, demam, keringat malam, rasa lelah,
+                        dan keluhan lain yang berkaitan dengan
+                        kondisi pernapasan.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- NOTE -->
+            <div class="tbc-intro-note">
+
+                <span>
+                    ✦
+                </span>
+
+                <p>
+                    Informasi ini bersifat edukatif.
+                    Jika mengalami keluhan kesehatan,
+                    pemeriksaan oleh tenaga kesehatan tetap
+                    diperlukan untuk mengetahui kondisi
+                    yang sebenarnya.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+
+        <section
+            class="how-section"
+            id="cara-kerja"
+        >
+
+            <div class="section-container">
+
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        HOW IT WORKS
+                    </span>
+
+
+                    <h2>
+
+                        Dari suara
+                        <br>
+
+                        menjadi <span>data.</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Proses dibuat sederhana agar pengguna
+                        dapat memahami bagaimana sebuah
+                        rekaman audio dapat dianalisis.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="process-list">
+
+
+                    <article class="process-item">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+
+                        <div class="process-content">
+
+                            <h3>
+                                Rekam Suara
+                            </h3>
+
+
+                            <p>
+
+                                Pengguna merekam suara batuk
+                                menggunakan mikrofon perangkat.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="process-item">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+
+                        <div class="process-content">
+
+                            <h3>
+                                Ekstraksi Audio
+                            </h3>
+
+
+                            <p>
+
+                                Sistem membaca karakteristik dasar
+                                dari sinyal audio yang direkam.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="process-item">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+
+                        <div class="process-content">
+
+                            <h3>
+                                Analisis
+                            </h3>
+
+
+                            <p>
+
+                                Data audio diproses untuk menghasilkan
+                                informasi mengenai karakteristik suara.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="process-item">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+
+                        <div class="process-content">
+
+                            <h3>
+                                Hasil
+                            </h3>
+
+
+                            <p>
+
+                                Informasi analisis ditampilkan
+                                secara visual dan mudah dipahami.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            class="about-section"
+            id="tentang"
+        >
+
+            <div class="about-glow"></div>
+
+
+            <div class="about-container">
+
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        ABOUT THE PROJECT
+                    </span>
+
+
+                    <h2>
+
+                        Suara juga
+                        <br>
+
+                        punya <span>informasi.</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Cough Analyzer merupakan proyek yang
+                        mengeksplorasi bagaimana teknologi dapat
+                        digunakan untuk membaca karakteristik
+                        suara melalui data audio.
+
+                    </p>
+
+
+                    <p>
+
+                        Sistem ini dirancang sebagai media
+                        pembelajaran mengenai proses perekaman,
+                        pengolahan, dan analisis sinyal suara.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="about-visual">
+
+
+                    <div class="scanner">
+
+                        <div class="scanner-ring ring-1"></div>
+
+                        <div class="scanner-ring ring-2"></div>
+
+                        <div class="scanner-ring ring-3"></div>
+
+
+                        <div class="scanner-line"></div>
+
+
+                        <div class="scanner-center">
+
+                            <span></span>
+
+                            <small>
+                                AUDIO
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="scanner-info">
+
+                        <span>
+                            LIVE AUDIO
+                        </span>
+
+                        <strong>
+                            ANALYSIS
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section
+            class="cta-section"
+            id="analisis"
+        >
+
+            <div class="cta-glow"></div>
+
+
+            <div class="cta-content">
+
+                <span class="section-label">
+                    READY?
+                </span>
+
+
+                <h2>
+
+                    Let's analyze
+                    <br>
+
+                    your <span>sound.</span>
+
+                </h2>
+
+
+                <p>
+                    Mulai dengan satu rekaman suara.
+                </p>
+
+
+                <a
+                    href="index.html#recorder"
+                    class="cta-button"
+                    id="startAnalysisBtn"
+                >
+
+                    <span class="cta-button-dot"></span>
+
+                    Mulai Analisis
+
+                    <span class="cta-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RECORDER
+        ========================== -->
+
+        <section
+            class="recorder-section"
+            id="recorder"
+        >
+
+            <div class="recorder-bg-glow glow-one"></div>
+
+            <div class="recorder-bg-glow glow-two"></div>
+
+
+            <div class="recorder-container">
+
+
+                <div class="recorder-header">
+
+                    <span class="recorder-label">
+
+                        <span class="label-dot"></span>
+
+                        AUDIO LAB
+
+                    </span>
+
+
+                    <h2>
+
+                        Siap Merekam
+                        <br>
+
+                        <span>
+                            Suara Batukmu?
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Pastikan berada di tempat yang cukup
+                        tenang, lalu tekan tombol rekam
+                        untuk memulai.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- PROGRESS -->
+
+                <div class="analysis-progress">
+
+
+                    <div
+                        class="progress-step active"
+                        id="stepRecord"
+                    >
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <span>
+                            Rekam
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <div
+                        class="progress-step"
+                        id="stepAnalyze"
+                    >
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <span>
+                            Analisis
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-line"></div>
+
+
+                    <div
+                        class="progress-step"
+                        id="stepResult"
+                    >
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <span>
+                            Hasil
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RECORDER CARD -->
+
+                <div class="recorder-card">
+
+
+                    <div class="record-status">
+
+                        <span
+                            class="status-indicator"
+                            id="statusIndicator"
+                        ></span>
+
+                        <span id="recordStatus">
+                            Siap merekam
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="mic-area">
+
+                        <div class="mic-ring ring-one"></div>
+
+                        <div class="mic-ring ring-two"></div>
+
+                        <div class="mic-ring ring-three"></div>
+
+                        <div class="mic-glow"></div>
+
+
+                        <div
+                            class="mic-circle"
+                            id="micCircle"
+                        >
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z"/>
+
+                                <path d="M19 11a7 7 0 0 1-14 0"/>
+
+                                <path d="M12 18v4"/>
+
+                                <path d="M8 22h8"/>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="record-timer"
+                        id="recordTimer"
+                    >
+                        00:00
+                    </div>
+
+
+                    <p
+                        class="record-helper"
+                        id="recordHelper"
+                    >
+
+                        Tekan tombol di bawah
+                        untuk mulai merekam
+
+                    </p>
+
+
+
+                    <div
+                        class="waveform"
+                        id="waveform"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+
+                    <button
+    class="record-button"
+    id="recordButton"
+    type="button"
+>
+
+    <span class="record-button-inner">
+
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+            ...
+        </svg>
+
+    </span>
+
+    <span
+        class="record-button-text"
+        id="recordButtonText"
+    >
+        MULAI REKAM
+    </span>
+
+</button>
+
+
+                    <!-- =========================
+                         RECORDING PREVIEW
+                    ========================== -->
+
+                    <div
+                        class="recording-preview"
+                        id="recordingPreview"
+                    >
+
+
+                        <div class="preview-header">
+
+                            <div>
+
+                                <span class="preview-label">
+                                    RECORDING READY
+                                </span>
+
+
+                                <h3>
+                                    Dengarkan Rekamanmu
+                                </h3>
+
+                            </div>
+
+
+                            <span
+                                class="preview-duration"
+                                id="previewDuration"
+                            >
+                                00:00
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="audio-player-box">
+
+
+                            <button
+                                class="audio-play-button"
+                                id="audioPlayButton"
+                                type="button"
+                                aria-label="Putar rekaman"
+                            >
+                                ▶
+                            </button>
+
+
+
+                            <div class="audio-player-content">
+
+
+                                <div
+                                    class="audio-wave-preview"
+                                    id="audioWavePreview"
+                                >
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+
+                                <div class="audio-time">
+
+                                    <span id="audioCurrentTime">
+                                        00:00
+                                    </span>
+
+
+                                    <span id="audioTotalTime">
+                                        00:00
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <audio id="recordedAudio"></audio>
+
+
+
+                        <button
+                            class="analyze-audio-button"
+                            id="analyzeAudioButton"
+                            type="button"
+                        >
+
+                            <span>
+                                ✦
+                            </span>
+
+                            Analisis Audio
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="record-again-button"
+                            id="recordAgainButton"
+                            type="button"
+                        >
+
+                            ↻ Rekam Ulang
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- TIPS -->
+
+                    <div class="recorder-tips">
+
+
+                        <div class="tip-icon">
+                            ✦
+                        </div>
+
+
+                        <div class="tip-content">
+
+                            <strong>
+                                Tips sebelum merekam
+                            </strong>
+
+
+                            <p>
+
+                                Cari tempat yang relatif tenang,
+                                pegang perangkat dengan stabil,
+                                dan lakukan batuk secara natural.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="privacy-note">
+
+                        <span>
+                            ⌁
+                        </span>
+
+
+                        Rekaman digunakan untuk proses analisis
+                        audio pada proyek ini. Hasil bersifat
+                        edukatif dan bukan diagnosis medis.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-logo">
+
+                Cough<span>Analyzer</span>
+
+            </div>
+
+
+            <p>
+                Audio analysis project for educational purposes.
+            </p>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Cough Analyzer
+                </span>
+
+
+                <span>
+                    Think • Analyze • Understand
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
